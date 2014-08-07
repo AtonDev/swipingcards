@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F7F4EA7D1992AAF500740B5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4EA7C1992AAF500740B5D /* AppDelegate.swift */; };
-		F7F4EA801992AAF500740B5D /* swipingCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7F4EA7E1992AAF500740B5D /* swipingCards.xcdatamodeld */; };
 		F7F4EA821992AAF500740B5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4EA811992AAF500740B5D /* ViewController.swift */; };
 		F7F4EA851992AAF500740B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F4EA831992AAF500740B5D /* Main.storyboard */; };
 		F7F4EA871992AAF500740B5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F4EA861992AAF500740B5D /* Images.xcassets */; };
@@ -30,7 +29,6 @@
 		F7F4EA771992AAF500740B5D /* swipingCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipingCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F4EA7B1992AAF500740B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7F4EA7C1992AAF500740B5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7F4EA7F1992AAF500740B5D /* swipingCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = swipingCards.xcdatamodel; sourceTree = "<group>"; };
 		F7F4EA811992AAF500740B5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7F4EA841992AAF500740B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7F4EA861992AAF500740B5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -81,11 +79,10 @@
 			children = (
 				F7F4EA7C1992AAF500740B5D /* AppDelegate.swift */,
 				F7F4EA811992AAF500740B5D /* ViewController.swift */,
+				F7F4EA9C1992AB9000740B5D /* PageContentViewController.swift */,
 				F7F4EA831992AAF500740B5D /* Main.storyboard */,
 				F7F4EA861992AAF500740B5D /* Images.xcassets */,
-				F7F4EA7E1992AAF500740B5D /* swipingCards.xcdatamodeld */,
 				F7F4EA7A1992AAF500740B5D /* Supporting Files */,
-				F7F4EA9C1992AB9000740B5D /* PageContentViewController.swift */,
 			);
 			path = swipingCards;
 			sourceTree = "<group>";
@@ -217,7 +214,6 @@
 				F7F4EA821992AAF500740B5D /* ViewController.swift in Sources */,
 				F7F4EA9D1992AB9000740B5D /* PageContentViewController.swift in Sources */,
 				F7F4EA7D1992AAF500740B5D /* AppDelegate.swift in Sources */,
-				F7F4EA801992AAF500740B5D /* swipingCards.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,19 +409,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F7F4EA7E1992AAF500740B5D /* swipingCards.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F7F4EA7F1992AAF500740B5D /* swipingCards.xcdatamodel */,
-			);
-			currentVersion = F7F4EA7F1992AAF500740B5D /* swipingCards.xcdatamodel */;
-			path = swipingCards.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F7F4EA6F1992AAF500740B5D /* Project object */;
 }
