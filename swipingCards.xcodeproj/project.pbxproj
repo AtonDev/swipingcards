@@ -13,6 +13,7 @@
 		F7F4EA851992AAF500740B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F4EA831992AAF500740B5D /* Main.storyboard */; };
 		F7F4EA871992AAF500740B5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F4EA861992AAF500740B5D /* Images.xcassets */; };
 		F7F4EA931992AAF500740B5D /* swipingCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4EA921992AAF500740B5D /* swipingCardsTests.swift */; };
+		F7F4EA9D1992AB9000740B5D /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4EA9C1992AB9000740B5D /* PageContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		F7F4EA8C1992AAF500740B5D /* swipingCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swipingCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F4EA911992AAF500740B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7F4EA921992AAF500740B5D /* swipingCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipingCardsTests.swift; sourceTree = "<group>"; };
+		F7F4EA9C1992AB9000740B5D /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				F7F4EA861992AAF500740B5D /* Images.xcassets */,
 				F7F4EA7E1992AAF500740B5D /* swipingCards.xcdatamodeld */,
 				F7F4EA7A1992AAF500740B5D /* Supporting Files */,
+				F7F4EA9C1992AB9000740B5D /* PageContentViewController.swift */,
 			);
 			path = swipingCards;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7F4EA821992AAF500740B5D /* ViewController.swift in Sources */,
+				F7F4EA9D1992AB9000740B5D /* PageContentViewController.swift in Sources */,
 				F7F4EA7D1992AAF500740B5D /* AppDelegate.swift in Sources */,
 				F7F4EA801992AAF500740B5D /* swipingCards.xcdatamodeld in Sources */,
 			);
