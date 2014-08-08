@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7E3F6C61993DF120095C3DB /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3F6C51993DF120095C3DB /* TokenModel.swift */; };
 		F7F4EA7D1992AAF500740B5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4EA7C1992AAF500740B5D /* AppDelegate.swift */; };
 		F7F4EA821992AAF500740B5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4EA811992AAF500740B5D /* ViewController.swift */; };
 		F7F4EA851992AAF500740B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F4EA831992AAF500740B5D /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7E3F6C51993DF120095C3DB /* TokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		F7F4EA771992AAF500740B5D /* swipingCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipingCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F4EA7B1992AAF500740B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7F4EA7C1992AAF500740B5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				F7F4EA7C1992AAF500740B5D /* AppDelegate.swift */,
+				F7E3F6C51993DF120095C3DB /* TokenModel.swift */,
 				F7F4EA811992AAF500740B5D /* ViewController.swift */,
 				F7F4EA9C1992AB9000740B5D /* PageContentViewController.swift */,
 				F7F4EA831992AAF500740B5D /* Main.storyboard */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7F4EA821992AAF500740B5D /* ViewController.swift in Sources */,
+				F7E3F6C61993DF120095C3DB /* TokenModel.swift in Sources */,
 				F7F4EA9D1992AB9000740B5D /* PageContentViewController.swift in Sources */,
 				F7F4EA7D1992AAF500740B5D /* AppDelegate.swift in Sources */,
 			);
@@ -399,6 +403,7 @@
 				F7F4EA981992AAF500740B5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7F4EA991992AAF500740B5D /* Build configuration list for PBXNativeTarget "swipingCardsTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +412,7 @@
 				F7F4EA9B1992AAF500740B5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

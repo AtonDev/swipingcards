@@ -9,8 +9,10 @@
 import UIKit
 
 class PageContentViewController: UIViewController {
-    
-    var pageIndex:Int = 0
+    //var _index = 0
+    var _pageIndex: Int!
+    var _title = ""
+    var _abstract = ""
     @IBOutlet var _backgroundView: UIView!
     @IBOutlet weak var _cardView: UIView!
     @IBOutlet weak var _cardTitle: UILabel!
@@ -19,10 +21,19 @@ class PageContentViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        //self._pageIndex = self._index
+        //println("loading content view with index \(String(self._pageIndex))")
         super.viewDidLoad()
         let bg:UIColor = UIColor(red:0, green: 0, blue: 0, alpha: 0.3)
         self._backgroundView.backgroundColor = bg
+        self._cardTitle.text = self._title
+        self._cardAbstract.text = self._abstract
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //self._pageIndex = self._index
+        println("current index \(self._pageIndex)")
     }
 
     override func didReceiveMemoryWarning() {
