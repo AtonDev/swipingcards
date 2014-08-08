@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebViewDelegate, UIPageViewControllerDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebViewDelegate, UIPageViewControllerDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var _progressBar: UIProgressView!
     //@IBOutlet weak var _queryBox: UITextField!
@@ -50,13 +50,40 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
 
     }
     
-    @IBAction func activateCards() {
-        self._pageViewController.view.alpha = 1
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - cards methods
+    
+    func initCards() {
+        //self._webView.loadRequest(NSURLRequest(URL: NSURL(string: self._urls[0] as String)))
+        
+        self._pageViewController = self.storyboard.instantiateViewControllerWithIdentifier("PageViewController") as UIPageViewController
+        self._pageViewController.dataSource = self
+        self._pageViewController.delegate = self
+        
+        let startingController:PageContentViewController = self.cardAtIndex(0)!
+        let viewControllers: NSArray = [startingController]
+        self._pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
+        
+        self._pageViewController.view.frame = CGRect(x:0, y:66, width:self.view.frame.width, height: self.view.frame.height-60)
+        
+        self.addChildViewController(self._pageViewController)
+        self.view.addSubview(self._pageViewController.view)
+        self._pageViewController!.didMoveToParentViewController(self)
+        
+        for gesture in self._pageViewController.gestureRecognizers {
+            (gesture as UIGestureRecognizer).delegate = self
+        }
+        
+    }
+    
+    @IBAction func activateCards() {
+        self._pageViewController.view.alpha = 1
     }
     
     func cardAtIndex(index:Int)->PageContentViewController? {
@@ -67,10 +94,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
         pageView._title = self._titles[index] as String
         pageView._abstract = self._abstracts[index] as String
         
-
+        
         return pageView
     }
-    // MARK - searchbar delegate methods
+        
+    // MARK: - searchbar delegate methods
     
     func beginSearch(query:String) {
         self.getURLs(query)
@@ -82,7 +110,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
     }
     
     
-    // MARK - web view helpers
+    // MARK: - web view helpers
     func getURLs(query:String) {
         var url:NSURL = NSURL(string: (self.searchURLstr + query).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()))
         println("getURLs called")
@@ -113,26 +141,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
     }
     
     
-    func initCards() {
-        //self._webView.loadRequest(NSURLRequest(URL: NSURL(string: self._urls[0] as String)))
-        
-        self._pageViewController = self.storyboard.instantiateViewControllerWithIdentifier("PageViewController") as UIPageViewController
-        self._pageViewController.dataSource = self
-        self._pageViewController.delegate = self
-        
-        let startingController:PageContentViewController = self.cardAtIndex(0)!
-        let viewControllers: NSArray = [startingController]
-        self._pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
-        
-        self._pageViewController.view.frame = CGRect(x:0, y:66, width:self.view.frame.width, height: self.view.frame.height-60)
-        
-        self.addChildViewController(self._pageViewController)
-        self.view.addSubview(self._pageViewController.view)
-        self._pageViewController!.didMoveToParentViewController(self)
-
-    }
-    
-    
     
     
     // MARK: - page controller data source
@@ -160,7 +168,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
     }
     
     
-    // MARK - page controller delegate
+    // MARK: - page controller delegate
     
     func pageViewController(pageViewController: UIPageViewController!, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject]!, transitionCompleted completed: Bool) {
         if completed {
@@ -170,33 +178,46 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
     }
     
     func pageViewController(pageViewController: UIPageViewController!, willTransitionToViewControllers pendingViewControllers: [AnyObject]!) {
+        self.movePageViewOnTop()
         var idx:Int = (pendingViewControllers[0] as PageContentViewController)._pageIndex
         self._currentIndex = idx
     }
    
-    // MARK - web view delegate methods
+    // MARK: - web view delegate methods
     
     var webViewLoads_:Int = 0
     
     func webViewDidStartLoad(webView: UIWebView!) {
         if webViewLoads_ == 0 { self.startLoadingProgressBar() }
         webViewLoads_++
+        self.movePageViewOnTop()
     }
     
     func webViewDidFinishLoad(webView: UIWebView!) {
         webViewLoads_--
         if webViewLoads_ == 0 {
             self.stopLoadingProgressBar()
-            //self._progressBar.hidden = true
+            self.moveWebViewOnTop()
         }
-        self._pageViewController.view.alpha = 0
+        //self._pageViewController.view.alpha = 0
     }
     
     func webView(webView: UIWebView!, didFailLoadWithError error: NSError!) {
         webViewLoads_--
     }
     
-    //MARK - progress bar stuff
+    func moveWebViewOnTop() {
+        var mainWindow:UIWindow = UIApplication.sharedApplication().keyWindow
+        mainWindow.addSubview(self._webView)
+    }
+    
+    func movePageViewOnTop() {
+        var mainWindow:UIWindow = UIApplication.sharedApplication().keyWindow
+        mainWindow.addSubview(self._pageViewController.view)
+    }
+    
+    
+    //MARK: - progress bar stuff
     var timer:NSTimer!
     var isLoading:Bool!
     
@@ -221,13 +242,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
             //println("\(self._progressBar.progress)")
             if self._progressBar.progress >= 1 {
                 timer.invalidate()
-                timer = nil
                 self._progressBar.hidden = true
             } else { self._progressBar.progress += 0.05 }
         }
     }
-    
-    
     
 }
 

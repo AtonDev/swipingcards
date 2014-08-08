@@ -35,16 +35,26 @@
                             <constraint firstItem="xfe-Uh-8Pj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0AR-xW-eBs"/>
                             <constraint firstAttribute="trailing" secondItem="xfe-Uh-8Pj" secondAttribute="trailing" id="0HV-7a-FTa"/>
                             <constraint firstItem="D1W-Vi-b1J" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="1LQ-S9-6xT"/>
+                            <constraint firstItem="xfe-Uh-8Pj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="1" id="C79-O4-bHL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="D1W-Vi-b1J" secondAttribute="trailing" constant="-16" id="CML-9C-eVC"/>
-                            <constraint firstItem="xfe-Uh-8Pj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="G76-9U-QSB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xfe-Uh-8Pj" secondAttribute="trailing" id="F7d-RX-g1g"/>
+                            <constraint firstItem="xfe-Uh-8Pj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="4" id="I26-Jh-AcD">
+                                <variation key="widthClass=compact" constant="3"/>
+                            </constraint>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xfe-Uh-8Pj" secondAttribute="bottom" id="K50-MR-iSJ"/>
                             <constraint firstItem="Elr-u8-Wco" firstAttribute="top" secondItem="D1W-Vi-b1J" secondAttribute="bottom" id="K5u-J5-sa4"/>
                             <constraint firstItem="D1W-Vi-b1J" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="NiA-69-KfI"/>
                             <constraint firstItem="Elr-u8-Wco" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="OAr-VR-NOo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xfe-Uh-8Pj" secondAttribute="trailing" constant="-16" id="baJ-Jb-wje"/>
+                            <constraint firstAttribute="trailing" secondItem="xfe-Uh-8Pj" secondAttribute="trailing" constant="1" id="bPZ-kl-MQg"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xfe-Uh-8Pj" secondAttribute="bottom" id="fjO-Ch-adW"/>
+                            <constraint firstAttribute="trailing" secondItem="xfe-Uh-8Pj" secondAttribute="trailing" constant="4" id="n2c-9v-zNI">
+                                <variation key="widthClass=compact" constant="3"/>
+                            </constraint>
                             <constraint firstItem="D1W-Vi-b1J" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="q1I-fY-ST2"/>
                             <constraint firstItem="xfe-Uh-8Pj" firstAttribute="top" secondItem="Elr-u8-Wco" secondAttribute="bottom" id="teb-SX-iAH"/>
+                            <constraint firstItem="xfe-Uh-8Pj" firstAttribute="trailing" secondItem="2fi-mo-0CV" secondAttribute="trailing" id="uQ5-k0-nxP"/>
+                            <constraint firstItem="xfe-Uh-8Pj" firstAttribute="leading" secondItem="2fi-mo-0CV" secondAttribute="leading" id="xhK-aN-Q8y"/>
+                            <constraint firstItem="xfe-Uh-8Pj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="y9U-qE-D1e"/>
                             <constraint firstItem="Elr-u8-Wco" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="yaA-0v-3WT"/>
                         </constraints>
                         <variation key="default">
@@ -60,9 +70,15 @@
                                 <exclude reference="K5u-J5-sa4"/>
                                 <exclude reference="OAr-VR-NOo"/>
                                 <exclude reference="yaA-0v-3WT"/>
-                                <exclude reference="G76-9U-QSB"/>
-                                <exclude reference="baJ-Jb-wje"/>
+                                <exclude reference="C79-O4-bHL"/>
+                                <exclude reference="F7d-RX-g1g"/>
+                                <exclude reference="I26-Jh-AcD"/>
+                                <exclude reference="bPZ-kl-MQg"/>
+                                <exclude reference="n2c-9v-zNI"/>
                                 <exclude reference="teb-SX-iAH"/>
+                                <exclude reference="uQ5-k0-nxP"/>
+                                <exclude reference="xhK-aN-Q8y"/>
+                                <exclude reference="y9U-qE-D1e"/>
                                 <exclude reference="fjO-Ch-adW"/>
                             </mask>
                         </variation>
@@ -79,9 +95,17 @@
                                 <include reference="K5u-J5-sa4"/>
                                 <include reference="OAr-VR-NOo"/>
                                 <include reference="yaA-0v-3WT"/>
-                                <include reference="G76-9U-QSB"/>
-                                <include reference="baJ-Jb-wje"/>
+                                <exclude reference="0AR-xW-eBs"/>
+                                <exclude reference="0HV-7a-FTa"/>
+                                <exclude reference="C79-O4-bHL"/>
+                                <exclude reference="F7d-RX-g1g"/>
+                                <include reference="I26-Jh-AcD"/>
+                                <exclude reference="bPZ-kl-MQg"/>
+                                <include reference="n2c-9v-zNI"/>
                                 <include reference="teb-SX-iAH"/>
+                                <exclude reference="uQ5-k0-nxP"/>
+                                <exclude reference="xhK-aN-Q8y"/>
+                                <exclude reference="y9U-qE-D1e"/>
                                 <include reference="fjO-Ch-adW"/>
                             </mask>
                         </variation>
