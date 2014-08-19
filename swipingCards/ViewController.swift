@@ -79,6 +79,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
         for gesture in self._pageViewController.gestureRecognizers {
             (gesture as UIGestureRecognizer).delegate = self
         }
+        self.movePageViewOnTop()
+
         
     }
     
@@ -190,7 +192,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIWebVie
     func webViewDidStartLoad(webView: UIWebView!) {
         if webViewLoads_ == 0 { self.startLoadingProgressBar() }
         webViewLoads_++
-        self.movePageViewOnTop()
     }
     
     func webViewDidFinishLoad(webView: UIWebView!) {

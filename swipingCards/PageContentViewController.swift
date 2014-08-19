@@ -15,8 +15,10 @@ class PageContentViewController: UIViewController {
     var _abstract = ""
     @IBOutlet var _backgroundView: UIView!
     @IBOutlet weak var _cardView: UIView!
-    @IBOutlet weak var _cardTitle: UILabel!
-    @IBOutlet weak var _cardAbstract: UITextView!
+    //@IBOutlet weak var _cardTitle: UILabel!
+    //@IBOutlet weak var _cardAbstract: UITextView!
+    @IBOutlet weak var _cardTitle: UIWebView!
+    @IBOutlet weak var _cardAbstract: UIWebView!
     
     
     
@@ -26,8 +28,8 @@ class PageContentViewController: UIViewController {
         super.viewDidLoad()
         let bg:UIColor = UIColor(red:0, green: 0, blue: 0, alpha: 0.3)
         self._backgroundView.backgroundColor = bg
-        self._cardTitle.text = self._title
-        self._cardAbstract.text = self._abstract
+        self._cardTitle.loadHTMLString(self._title, baseURL: nil)
+        self._cardAbstract.loadHTMLString(self._abstract, baseURL: nil)
         
     }
     
